@@ -1,41 +1,41 @@
-# Development Prompts
+How do I integrate Redux Toolkit into a Next.js project for global state management?
 
-1. Help migrate my existing CineStream React SPA to Next.js 15 using the App Router while preserving the existing UI and features.
+How can I move favorites logic from Context API to Redux slice?
 
-2. Explain how to replace react-router-dom routes with Next.js file-based routing.
+What is the best way to structure a Redux store with multiple slices?
 
-3. Show how to move the initial TMDB Popular Movies fetch from useEffect to a Server Component.
+How do I connect Redux store to Next.js App Router using Provider?
 
-4. Help create a dynamic route using `/movie/[id]` and fetch movie details on the server.
+How can I manage a favorites list globally using Redux?
 
-5. Implement generateMetadata so each movie page gets a dynamic title and description.
+How do I implement add/remove toggle functionality in Redux state?
 
-6. My TMDB search request is exposing the API key in the browser. Help move search functionality into a Next.js API route.
+How do I implement a global filter system using Redux Toolkit?
 
-7. Add debounced search functionality and display a proper "No movies found" state when no results are returned.
+How can I connect a sidebar filter component with Redux state?
 
-8. Search results are creating layout and spacing issues compared to the original CineStream project. Help restore the previous card alignment without affecting the existing movie grid.
+How do I filter movies by genre using Redux state?
 
-9. Add a Favorites feature using Context API and localStorage.
+How do I filter movies by release year dynamically?
 
-10. Display the favorites count in the navbar and keep it synchronized when movies are added or removed.
+How do I make UI update instantly when Redux filter state changes?
 
-11. Favorites persist after refresh, but the navbar count does not update correctly. Help debug and fix it.
+How can I combine multiple filters (genre + year) in a single filtered list?
 
-12. Debug hydration mismatch warnings caused by localStorage-based favorite state after page refresh.
+How do I optimize filtering performance using useMemo in React?
 
-13. Movie cards are showing hydration errors because favorite icons render differently between server and client. Help identify and fix the issue.
+How can I prevent unnecessary re-renders when Redux state changes?
 
-14. Restore infinite scroll functionality from the previous CineStream implementation while keeping the initial movie fetch server-rendered.
+How do I optimize infinite scroll using useCallback?
 
-15. Prevent duplicate movie entries when additional pages are loaded through infinite scroll.
+How can I efficiently render large lists of movies in React?
 
-16. Help debug production build failures related to React hooks, useEffect dependencies, and state updates.
+How do I structure components like Navbar, MovieCard, SearchSection, and FilterSidebar?
 
-17. Fix ESLint errors that appear during `npm run build` even though the application works correctly in development mode.
+How do I connect Redux state to multiple components without prop drilling?
 
-18. Verify that dynamic routing, search, favorites, infinite scroll, and SEO metadata work correctly after migration.
+How do I handle API integration for fetching popular movies and search results?
 
-19. Review project structure and suggest a clean organization for API routes, components, context, and utility functions.
+How do I implement infinite scrolling using IntersectionObserver?
 
-20. Perform a final pre-deployment audit and identify any issues that could affect production deployment.
+How do I manage loading and empty states in UI properly?
