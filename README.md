@@ -1,92 +1,73 @@
-# CineStream Next.js Migration
+# CineStream 🎬
 
-## Project Overview
-
-CineStream is a movie discovery application built using Next.js 15 and TMDB API.
-
-This project is an upgrade of the previous React SPA version. The application now utilizes Server-Side Rendering (SSR), App Router, dynamic routing, and metadata generation for improved SEO and performance.
+This is a movie browsing app built using Next.js and Redux Toolkit.  
+I built it as part of a frontend assignment to practice global state management and API integration.
 
 ---
 
-## Features
+## What it does
 
-### Popular Movies
+- Shows popular movies from TMDB API
+- Search movies in real time
+- Filter movies by genre and release year
+- Add/remove favorites
+- Infinite scroll for loading more movies
+- Global state handled using Redux Toolkit
 
-* Fetches popular movies from TMDB
-* Initial data rendered on the server
-* Responsive movie card layout
+---
 
-### Movie Search
+## Tech used
 
-* Search movies by title
-* Debounced search requests
-* Displays "No movies found" when results are unavailable
+- Next.js
+- React
+- Redux Toolkit
+- React Redux
+- TMDB API
+- CSS
 
-### Movie Details
+---
 
-* Dynamic route using `/movie/[id]`
-* Displays poster, overview, release date, runtime, and rating
-* SEO metadata generated dynamically
+## How state is handled
+
+I used Redux Toolkit for managing global state instead of prop drilling.
+
+There are two main slices:
+- favorites → stores liked movies
+- filters → handles genre and year filtering
+
+This helps keep state shared across Navbar, MovieCard, and sidebar.
+
+---
+
+## Features breakdown
 
 ### Favorites
+Clicking the heart icon adds/removes movies from global favorites.  
+Navbar updates instantly with count.
 
-* Add and remove favorite movies
-* Favorites stored in localStorage
-* Favorites page with count in navbar
-* Favorites persist after refresh
+### Search
+Typing in search box fetches results from API with a small delay to avoid too many calls.
 
-### Infinite Scroll
+### Filters
+Sidebar filters movies based on selected genre and year.  
+Everything updates instantly because of Redux state.
 
-* Automatically loads additional popular movies while scrolling
-* Prevents duplicate movie entries
-
----
-
-## Technologies Used
-
-* Next.js 15
-* React
-* TMDB API
-* Context API
-* CSS
-* App Router
+### Infinite scroll
+More movies load automatically when scrolling down using IntersectionObserver.
 
 ---
 
-## Routing Structure
+## What I learned
 
-* `/` → Home Page
-* `/favorites` → Favorites Page
-* `/movie/[id]` → Movie Details Page
+- How Redux Toolkit actually works in real apps
+- How to structure a scalable React project
+- How to connect API + UI + global state properly
+- Performance basics using useMemo and useCallback
 
 ---
 
-## Setup
-
-Install dependencies:
+## Run locally
 
 ```bash
 npm install
-```
-
-Run development server:
-
-```bash
 npm run dev
-```
-
-Build production version:
-
-```bash
-npm run build
-```
-
----
-
-## Environment Variable
-
-Create `.env.local`
-
-```env
-TMDB_KEY=YOUR_TMDB_API_KEY
-```
